@@ -68,24 +68,26 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
 
             {/* Main Headline H1 */}
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-none">
-              <span className="inline-flex items-center gap-5 sm:gap-6 mb-4 flex-wrap">
+              <span className="inline-flex items-center gap-6 sm:gap-8 mb-5 flex-wrap">
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.08, rotate: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="relative shrink-0"
                 >
+                  {/* Premium animated glowing backing ring behind the official logo */}
+                  <div className="absolute -inset-2 bg-gradient-to-tr from-blue-600 via-emerald-400 to-[#2563EB] rounded-[32px] sm:rounded-[40px] opacity-75 blur-md animate-pulse"></div>
                   <img 
                     src="/logo.jpg" 
                     alt="Logo officiel D-Pharma" 
-                    className="w-18 h-18 sm:w-24 sm:h-24 rounded-3xl object-cover border-3 border-white shadow-2xl ring-8 ring-blue-500/8 hover:ring-blue-500/15 transition-all duration-300"
+                    className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-[28px] sm:rounded-[36px] object-cover border-4 border-white shadow-2xl ring-4 ring-blue-500/10 hover:ring-blue-500/20 transition-all duration-300 z-10"
                     referrerPolicy="no-referrer"
                   />
-                  <span className="absolute -bottom-1 -right-1 flex h-4 w-4">
+                  <span className="absolute -bottom-1 -right-1 flex h-5 w-5 z-20">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500"></span>
+                    <span className="relative inline-flex rounded-full h-5 w-5 bg-emerald-500 border-2 border-white shadow-md"></span>
                   </span>
                 </motion.div>
-                <span className="self-center text-slate-900 font-extrabold tracking-tight">D-Pharma —</span>
+                <span className="self-center text-slate-900 font-black tracking-tight drop-shadow-xs">D-Pharma —</span>
               </span>
               <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-[#10B981] bg-clip-text text-transparent block mt-2">
                 Votre santé, notre priorité !
@@ -226,35 +228,45 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
                 <span className="text-[10px] font-display font-bold text-emerald-800">Livraison 30 min</span>
               </motion.div>
 
-              {/* Decorative Glow backdrops - Soft Cinematic Lighting */}
-              <div className="absolute -inset-10 bg-gradient-to-tr from-[#2563EB]/15 to-[#10B981]/15 rounded-[60px] opacity-70 blur-3xl group-hover:scale-105 transition-transform duration-500 pointer-events-none"></div>
+              {/* Decorative Glow backdrops - Soft Cinematic Lighting with Dual-colored ambient orbs */}
+              <div className="absolute -inset-10 bg-gradient-to-tr from-[#2563EB]/25 to-[#10B981]/25 rounded-[70px] opacity-70 blur-3xl group-hover:scale-110 group-hover:opacity-90 transition-all duration-700 pointer-events-none"></div>
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-blue-600/15 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700"></div>
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700"></div>
 
-              {/* CSS Phone Shell */}
+              {/* CSS Phone Shell - High Fidelity 3D Chassis */}
               <motion.div 
                 whileHover={{ 
-                  y: -10,
-                  rotateY: -5,
-                  rotateX: 5,
-                  boxShadow: "0 30px 60px -15px rgba(37, 99, 235, 0.15)"
+                  y: -15,
+                  rotateY: -8,
+                  rotateX: 6,
+                  scale: 1.03,
+                  boxShadow: "0 40px 80px -20px rgba(37, 99, 235, 0.25), 0 0 40px 5px rgba(16, 185, 129, 0.15)"
                 }}
-                transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                className="relative w-full h-full bg-slate-950 rounded-[48px] p-2.5 shadow-2xl border-4 border-slate-800/90 overflow-hidden transform-gpu"
-                style={{ perspective: 1000 }}
+                transition={{ type: "spring", stiffness: 120, damping: 18 }}
+                className="relative w-full h-full bg-[#0B0F19] rounded-[52px] p-3 shadow-2xl border-4 border-slate-800/90 overflow-hidden transform-gpu flex flex-col justify-between"
+                style={{ 
+                  perspective: 1200, 
+                  transformStyle: "preserve-3d"
+                }}
               >
                 
                 {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-slate-950 rounded-b-2xl z-35 flex items-center justify-center">
-                  <div className="w-12 h-1.5 bg-slate-800 rounded-full mb-1"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-44 h-6.5 bg-[#0B0F19] rounded-b-2xl z-35 flex items-center justify-center border-b border-x border-slate-800/40">
+                  <div className="w-14 h-1.5 bg-slate-800/80 rounded-full mb-1"></div>
+                  <div className="w-2.5 h-2.5 bg-blue-900/60 rounded-full mb-1 ml-2 border border-blue-500/10"></div>
                 </div>
 
                 {/* Inner Screen Canvas */}
-                <div className="w-full h-full bg-slate-50 rounded-[38px] overflow-hidden relative flex flex-col font-sans border border-slate-900/10">
+                <div className="w-full h-full bg-slate-50 rounded-[40px] overflow-hidden relative flex flex-col font-sans border border-slate-950/20">
                   
+                  {/* Cinematic Specular Light Reflection Overlay (Glass Sheen) */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/12 to-white/6 pointer-events-none z-30 transition-transform duration-1000 group-hover:translate-x-full group-hover:translate-y-full transform -translate-x-full -translate-y-full"></div>
+
                   {/* Real App Mockup Image layered on top */}
                   <img 
                     src="/app-mockup.jpeg" 
                     alt="D-Pharma App Mockup" 
-                    className="absolute inset-0 w-full h-full object-cover z-25 select-none transition-transform duration-500 group-hover:scale-102"
+                    className="absolute inset-0 w-full h-full object-cover z-25 select-none transition-transform duration-700 group-hover:scale-104"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
