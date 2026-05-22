@@ -1,0 +1,6 @@
+{
+  "name": "D-Pharma",
+  "description": "La première plateforme intelligente d'accès aux services pharmaceutiques à Djibouti. Commandez, localisez et suivez vos traitements en toute simplicité.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
