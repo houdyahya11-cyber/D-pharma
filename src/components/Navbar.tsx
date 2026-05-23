@@ -28,12 +28,7 @@ export default function Navbar({ onOpenWaitlist }: NavbarProps) {
 
   const navLinks = [
     { name: "Accueil", href: "#hero" },
-    { name: "Problème", href: "#problem" },
-    { name: "Solution", href: "#solution" },
-    { name: "IA", href: "#ai-capabilities" },
-    { name: "Avantage", href: "#advantage" },
-    { name: "Marché", href: "#market" },
-    { name: "Économie", href: "#economy" },
+    { name: "Problème & Solution", href: "#problem" },
     { name: "Démo Live", href: "#demo" },
     { name: "Équipe", href: "#team" },
   ];

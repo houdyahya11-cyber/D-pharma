@@ -411,7 +411,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "team-1",
     name: "EZZALDINE SANAD KHALED",
-    role: "Co-fondateur & Développeur Principal D-Pharma",
+    role: "Co-fondateur & Spécialiste IA & Cybersécurité",
     quote: "Mon engagement à travers le projet D-Pharma est d'offrir à Djibouti une technologie moderne de pointe, capable de simplifier radicalement l'accès aux officines et d'organiser l'écosystème pharmaceutique local.",
     avatarUrl: "/EZZALDINE SANAD KHALED Etudiant en ATID2-jpg.jpeg",
     linkedinUrl: "https://www.linkedin.com/",

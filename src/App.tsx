@@ -7,14 +7,6 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProblemSolution from "./components/ProblemSolution";
-import HowItWorks from "./components/HowItWorks";
-import AICapability from "./components/AICapability";
-import CompetitiveAdvantage from "./components/CompetitiveAdvantage";
-import MarketStats from "./components/MarketStats";
-import CustomerSegments from "./components/CustomerSegments";
-import RevenueUnitEconomics from "./components/RevenueUnitEconomics";
-import FinancialProjections from "./components/FinancialProjections";
-import AcquisitionStrategy from "./components/AcquisitionStrategy";
 import LiveDemo from "./components/LiveDemo";
 import TeamTrust from "./components/TeamTrust";
 import FooterCTA from "./components/FooterCTA";
@@ -58,33 +50,6 @@ export default function App() {
 
         {/* SECTION 2 & 3: THE PROBLEM & SOLUTION GRILLS */}
         <ProblemSolution onFeatureSelect={handleFeatureNavigate} />
-
-        {/* SECTION 4: HOW IT WORKS STEP TIMELINE */}
-        <HowItWorks />
-
-        {/* SECTION 5: AI TECH MOAT PLAYS */}
-        <AICapability />
-
-        {/* SECTION 6: THE COMPETITIVE MATRICES */}
-        <CompetitiveAdvantage />
-
-        {/* SECTION 7: DJIBOUTI REGIONAL MARKET PROOF */}
-        <MarketStats />
-
-        {/* SECTION 8: 4 CUSTOMER PERSONAS INDICES */}
-        <CustomerSegments 
-          onOpenWaitlist={handleOpenWaitlist}
-          onNavigateToDemo={handleFeatureNavigate}
-        />
-
-        {/* SECTION 9 & 10: BUSINESS REVENUES & SLIDER CALCULATOR */}
-        <RevenueUnitEconomics />
-
-        {/* SECTION 11: FINANCIAL GROWTH CHARTS */}
-        <FinancialProjections />
-
-        {/* SECTION 12: ACQUISITION PHASES ROADMAP */}
-        <AcquisitionStrategy />
 
         {/* SECTION 13: 3D PHONE PERSPECTIVE INTERACTIVE SIMULATORS */}
         <LiveDemo />

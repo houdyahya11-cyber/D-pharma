@@ -308,10 +308,10 @@ export default function ProblemSolution({ onFeatureSelect }: ProblemSolutionProp
       )}
 
       {/* SECTION 3 — THE SOLUTION (Value Proposition) */}
-      <section id="solution" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative scroll-mt-22 overflow-hidden py-12">
+      <section id="solution" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative scroll-mt-22 py-16">
         {/* Cinematic Backdrop Ambient Blooms */}
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-emerald-400/5 rounded-full filter blur-3xl pointer-events-none select-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-blue-500/5 rounded-full filter blur-3xl pointer-events-none select-none"></div>
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-600/5 rounded-full filter blur-3xl pointer-events-none select-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-emerald-500/5 rounded-full filter blur-3xl pointer-events-none select-none"></div>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -320,118 +320,369 @@ export default function ProblemSolution({ onFeatureSelect }: ProblemSolutionProp
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16 relative z-10"
         >
-          <span className="text-[#10B981] text-xs font-mono font-bold tracking-widest uppercase bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100 shadow-3xs inline-flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-[#10B981]" />
-            La Solution
+          <span className="text-[#10B981] text-xs font-mono font-bold tracking-widest uppercase bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-100 shadow-3xs inline-flex items-center gap-1">
+            <Sparkles className="w-3.5 h-3.5 text-[#10B981] animate-pulse" />
+            L'Écosystème Intelligent D-Pharma
           </span>
-          <h2 className="mt-4 font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Une plateforme complète pour votre santé
+          <h2 className="mt-4 font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-none">
+            La Révolution de l'Accès aux Soins à Djibouti
           </h2>
-          <p className="mt-2 text-sm font-mono text-slate-500 font-bold uppercase tracking-wide">
-            D-Pharma — Une plateforme intelligente d'accès aux services pharmaceutiques
+          <p className="mt-3 font-sans text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            Plus qu'une simple application mobile, D-Pharma est un écosystème connecté qui relie instantanément patients, pharmacies et coursiers pour un service médical fluide, fiable et immédiat.
           </p>
         </motion.div>
 
-        {/* 7 Glassmorphism cards in a 3-3-1 responsive grid */}
-        <motion.div 
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.08
-              }
-            }
-          }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
-        >
-          {SOLUTION_CARDS.slice(0, 6).map((card) => (
-            <motion.div
-              key={card.id}
-              onClick={() => onFeatureSelect(card.id)}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    type: "spring",
-                    stiffness: 90,
-                    damping: 14
-                  }
-                }
-              }}
-              whileHover={{ 
-                y: -8, 
-                scale: 1.02, 
-                boxShadow: "0 20px 40px -15px rgba(37, 99, 235, 0.08)",
-                border: "1px solid rgba(37, 99, 235, 0.2)"
-              }}
-              className="bg-white/70 backdrop-blur-md rounded-3xl border border-slate-100 p-6 flex flex-col justify-between transition-colors duration-300 cursor-pointer group hover:bg-white"
-            >
-              <div>
-                <div className="w-12 h-12 bg-blue-50 text-[#2563EB] rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-3xs group-hover:bg-[#2563EB] group-hover:text-white">
-                  {renderIcon(card.iconName, "w-6 h-6 transition-transform")}
-                </div>
-                <h3 className="font-display font-bold text-slate-900 text-sm leading-tight flex items-center gap-1.5">
-                  {card.title}
-                </h3>
-                <p className="mt-3 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
-                  {card.description}
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100/50 flex items-center justify-between text-xs font-bold text-[#2563EB]/85 transition-colors group-hover:text-[#2563EB]">
-                <span className="group-hover:underline underline-offset-4">Explorer cette fonctionnalité</span>
-                <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
-              </div>
-            </motion.div>
-          ))}
-
-          {/* Last Card (Card 7) Centered across 1-3 columns depending on sizing */}
+        {/* High-Fidelity Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          
+          {/* Card 1: COMMANDE EN LIGNE (Large Bento Box, spanning cols on large screens) */}
           <motion.div
-            onClick={() => onFeatureSelect(SOLUTION_CARDS[6].id)}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: "spring",
-                  stiffness: 90,
-                  damping: 14
-                }
-              }
-            }}
-            whileHover={{ 
-              y: -8, 
-              scale: 1.02, 
-              boxShadow: "0 20px 40px -15px rgba(16, 185, 129, 0.08)",
-              border: "1px solid rgba(16, 185, 129, 0.2)"
-            }}
-            className="md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto w-full bg-[#10B981]/5 backdrop-blur-md rounded-3xl border border-emerald-100 p-6 flex flex-col justify-between transition-colors duration-300 cursor-pointer group hover:bg-white text-center sm:text-left"
+            onClick={() => onFeatureSelect("sol-1")}
+            whileHover={{ y: -8, scale: 1.015 }}
+            className="md:col-span-2 bg-gradient-to-br from-white to-blue-50/20 backdrop-blur-md rounded-3xl border border-slate-150 p-8 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-blue-300 hover:shadow-xl cursor-pointer group"
           >
-            <div>
-              <div className="w-12 h-12 bg-emerald-500 text-white rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-2xs group-hover:bg-[#10B981]">
-                {renderIcon(SOLUTION_CARDS[6].iconName, "w-6 h-6")}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div className="md:col-span-7 space-y-4">
+                <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                  <ShoppingCart className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-800 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border border-blue-100 uppercase tracking-wider">
+                    ● Officiel & Sécurisé
+                  </div>
+                  <h3 className="font-display font-black text-slate-900 text-xl mt-2 leading-tight">
+                    Commande & Ordonnances en Ligne
+                  </h3>
+                  <p className="mt-3 font-sans text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold">
+                    Ajoutez vos formules courantes en un clic ou scannez directement votre ordonnance manuscrite. Notre système l'analyse et transmet les données de manière cryptée et confidentielle aux officines de garde pour préparation instantanée.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-display font-bold text-slate-900 text-sm leading-tight text-center sm:text-left">
-                {SOLUTION_CARDS[6].title}
-              </h3>
-              <p className="mt-3 font-sans text-xs text-slate-500 leading-relaxed font-semibold text-center sm:text-left">
-                {SOLUTION_CARDS[6].description}
-              </p>
+
+              {/* Visual Interactive Device Representation inside card */}
+              <div className="md:col-span-5 bg-white rounded-2xl p-4 border border-slate-100 shadow-sm space-y-3 relative overflow-hidden">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                  <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">ORDONNANCE DU DOCTEUR</span>
+                  <span className="text-[9px] bg-emerald-50 text-emerald-700 font-mono font-bold px-1.5 py-0.5 rounded">Vérifié ✓</span>
+                </div>
+                {/* Simulated list item */}
+                <div className="space-y-2">
+                  <div className="p-2 border border-slate-100 bg-slate-50/50 rounded-xl flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">🧴</span>
+                      <div>
+                        <span className="block text-[11px] font-bold text-slate-800">Doliprane 1000mg</span>
+                        <span className="block text-[8px] text-slate-400">Posologie : 3 fois par jour</span>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono font-semibold text-slate-800">450 FDJ</span>
+                  </div>
+                  <div className="p-2 border border-blue-100 bg-blue-50/40 rounded-xl flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">🧬</span>
+                      <div>
+                        <span className="block text-[11px] font-bold text-slate-800">Amoxicilline 500mg</span>
+                        <span className="block text-[8px] text-purple-600 font-bold">Inclus dans l'ordonnance</span>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono font-semibold text-slate-800">1 200 FDJ</span>
+                  </div>
+                </div>
+                {/* Order progress */}
+                <div className="pt-2 flex items-center justify-between">
+                  <span className="text-[10px] text-slate-400 font-medium">Total Estimé : 1 650 FDJ</span>
+                  <button className="bg-blue-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-lg shadow-sm hover:bg-blue-700 transition-colors">
+                    Passer la commande
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-emerald-100/40 flex items-center justify-between text-xs font-bold text-[#10B981]">
-              <span className="group-hover:underline underline-offset-4">Explorer cette fonctionnalité</span>
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-blue-600 transition-colors">
+              <span className="group-hover:underline underline-offset-4">Tester l'intégration et commander</span>
               <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
             </div>
           </motion.div>
-        </motion.div>
+
+          {/* Card 2: HISTORIQUE DES COMMANDES (Medium Bento, Elegant transaction list) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-2")}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="bg-white rounded-3xl border border-slate-150 p-6 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-blue-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                <History className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-black text-slate-900 text-sm tracking-tight">
+                  Historique Collaboratif & Renouvellements
+                </h4>
+                <p className="mt-2 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
+                  Tous vos achats de médicaments sont mémorisés dans un carnet de santé numérique crypté. Idéal pour renouveler vos traitements chroniques en 2 secondes sans ressaisie.
+                </p>
+              </div>
+
+              {/* Miniature Receipt Visual */}
+              <div className="p-4 bg-slate-50/70 border border-slate-150 rounded-2xl font-mono text-[9px] text-slate-600 space-y-2.5">
+                <div className="flex justify-between font-bold border-b border-dashed border-slate-300 pb-1.5 text-slate-800">
+                  <span>REÇU D-PHARMA #942</span>
+                  <span>MARDI</span>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between">
+                    <span>• Paracétamol x 2</span>
+                    <span className="font-bold">900 FDJ</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>• Vitamine C Bion3</span>
+                    <span className="font-bold">2 200 FDJ</span>
+                  </div>
+                </div>
+                <div className="border-t border-dashed border-slate-300 pt-1.5 flex justify-between font-bold text-emerald-600">
+                  <span>ÉTAT : LIVRÉ</span>
+                  <span>Total: 3 100 FDJ</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-blue-600 transition-colors">
+              <span className="group-hover:underline underline-offset-4">Voir mon historique</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+          {/* Card 3: RAPPELS DE PRISE (Medical Compliance schedule) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-3")}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="bg-white rounded-3xl border border-slate-150 p-6 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-emerald-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                <Bell className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-black text-slate-900 text-sm tracking-tight">
+                  Suivi de Traitement & Rappels Intelligents
+                </h4>
+                <p className="mt-2 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
+                  Ne ratez plus jamais une prise importante de traitement. Votre calendrier affiche vos prescriptions et génère des alarmes discrètes ou notifications SMS sur votre smartphone.
+                </p>
+              </div>
+
+              {/* Compliance Calendar visual */}
+              <div className="p-3 bg-white border border-slate-100 rounded-2xl shadow-sm space-y-2">
+                <div className="flex items-center gap-1.5 text-[9px] font-mono font-bold text-slate-700">
+                  📅 PLANIFICATEUR DU SÉJOUR :
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-[8.5px] font-semibold text-slate-600">
+                  <div className="p-2 bg-emerald-50/50 border border-emerald-100 rounded-xl flex items-center justify-between">
+                    <div>
+                      <span className="block font-bold text-slate-800">08:00 AM Matin</span>
+                      <span className="text-[7.5px] text-emerald-700">✓ Pris (Doliprane)</span>
+                    </div>
+                    <span className="text-base text-emerald-500">💊</span>
+                  </div>
+                  <div className="p-2 bg-amber-50/50 border border-amber-100 rounded-xl flex items-center justify-between">
+                    <div>
+                      <span className="block font-bold text-slate-800">20:00 PM Soir</span>
+                      <span className="text-[7.5px] text-amber-700">● Alarme programmée</span>
+                    </div>
+                    <span className="text-base text-amber-500">⏰</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-[#10B981] transition-colors">
+              <span className="group-hover:underline underline-offset-4">Configurer mes rappels</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+          {/* Card 4: LOCALISATION DES PHARMACIES (Map-pin overlay) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-4")}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="bg-white rounded-3xl border border-slate-150 p-6 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-blue-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-black text-slate-900 text-sm tracking-tight">
+                  Carte des Officines & Gardes Actives
+                </h4>
+                <p className="mt-2 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
+                  Visualisez instantanément la pharmacie centrale ouverte ou trouvez la pharmacie de garde physique la plus proche à Balbala, avec les horaires de nuit actualisés en continu.
+                </p>
+              </div>
+
+              {/* Map Locator Preview */}
+              <div className="h-28 rounded-2xl bg-blue-50/50 relative overflow-hidden border border-blue-100 flex flex-col justify-between p-3">
+                <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#2563eb_2px,transparent_2px)] [background-size:10px_10px]"></div>
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="text-[8.5px] font-mono font-black text-slate-600 bg-white/95 border border-slate-150 px-2 py-0.5 rounded-full shadow-3xs">
+                    Djibouti Centre-Ville
+                  </span>
+                  <span className="flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                </div>
+                {/* Coordinate indicators */}
+                <div className="relative z-10 p-2.5 bg-white/95 rounded-xl border border-slate-100 shadow-3xs flex items-center gap-2">
+                  <span className="text-xs">📍</span>
+                  <div>
+                    <span className="block text-[9.5px] font-bold text-slate-800">Pharmacie Ambulante</span>
+                    <span className="block text-[7.5px] text-emerald-600 font-extrabold">Gardes ouvertes 24h/24</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-blue-600 transition-colors">
+              <span className="group-hover:underline underline-offset-4">Ouvrir la géolocalisation</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+          {/* Card 5: LIVRAISON ULTRA RAPIDE (Medium Bento, progress tracker) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-5")}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="bg-white rounded-3xl border border-slate-150 p-6 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-emerald-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-emerald-50 text-[#10B981] rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                <Truck className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-black text-slate-900 text-sm tracking-tight">
+                  Livraison Express Sécurisée en 30 Min
+                </h4>
+                <p className="mt-2 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
+                  Nos chauffeurs agrées récupèrent vos médicaments sous pochette isotherme scellée pour respecter l'intégrité thérapeutique, et vous livrent directement chez vous en un temps record.
+                </p>
+              </div>
+
+              {/* Delivery Progress visual with animated pulse */}
+              <div className="p-3 bg-slate-50/80 border border-slate-150 rounded-2xl space-y-2">
+                <div className="flex items-center justify-between text-[9px] font-mono">
+                  <span className="font-bold text-emerald-800">SUIVI DU LIVREUR :</span>
+                  <span className="text-slate-400">Temps estimé : 14 minutes</span>
+                </div>
+                <div className="h-2 bg-slate-200 rounded-full overflow-hidden relative">
+                  <div className="absolute top-0 bottom-0 left-0 w-2/3 bg-emerald-500 rounded-full transition-all duration-1000 animate-pulse"></div>
+                </div>
+                <div className="flex items-center justify-between text-[8px] text-slate-500 font-semibold font-mono">
+                  <span>Pharmacopée</span>
+                  <span className="text-emerald-600 font-bold">En transit... 📍</span>
+                  <span>Domicile</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-[#10B981] transition-colors">
+              <span className="group-hover:underline underline-offset-4">Calculer les frais de livraison</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+          {/* Card 6: CHATBOT MEDICAL INTELLIGENT (Large Bento Box, chatbot dialogue replica) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-6")}
+            whileHover={{ y: -8, scale: 1.015 }}
+            className="md:col-span-2 bg-gradient-to-br from-white to-emerald-50/20 backdrop-blur-md rounded-3xl border border-slate-150 p-8 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-emerald-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div className="md:col-span-7 space-y-4">
+                <div className="w-12 h-12 bg-emerald-50 text-[#10B981] rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                  <Bot className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border border-emerald-100 uppercase tracking-wider">
+                    ● Intelligence Artificielle & Correction
+                  </div>
+                  <h3 className="font-display font-black text-slate-900 text-xl mt-2 leading-tight">
+                    Chatbot Thérapeutique de Posologie
+                  </h3>
+                  <p className="mt-3 font-sans text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold">
+                    Posez vos questions de posologie ou vérifiez les effets secondaires directement avec notre chatbot intelligent propulsé par Gemini. Il résout les typos, vous guide dans la prise et sécurise votre parcours médical 24h/24.
+                  </p>
+                </div>
+              </div>
+
+              {/* Chatbot Interface visual snippet */}
+              <div className="md:col-span-5 bg-white rounded-2xl p-4 border border-slate-100 shadow-sm space-y-3.5 relative overflow-hidden">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                  <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    Assistant IA en Direct
+                  </span>
+                  <span className="text-[8px] text-slate-400">Gemini Active</span>
+                </div>
+                <div className="space-y-2 text-[9px] leading-relaxed">
+                  <div className="bg-slate-100 text-slate-700 p-2.5 rounded-2xl rounded-tr-none text-right max-w-[85%] ml-auto font-semibold">
+                    "comment prendre le doliprane ?"
+                  </div>
+                  <div className="bg-emerald-50/80 text-slate-800 p-2.5 rounded-2xl rounded-tl-none max-w-[90%] font-medium">
+                    <span className="font-bold text-emerald-800 block mb-0.5">🤖 ASSISTANT D-PHARMA</span>
+                    "Pour un adulte de plus de 50 kg, la dose recommandée est de <strong>1 comprimé de 1g (1000mg)</strong> par prise, à renouveler toutes les 6 heures si nécessaire."
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-[#10B981] transition-colors">
+              <span className="group-hover:underline underline-offset-4">Clavarder avec l'assistant</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+          {/* Card 7: MESSAGERIE DIRECTE CLIENT-PHARMACIE (Medium Bento, user status dialogue) */}
+          <motion.div
+            onClick={() => onFeatureSelect("sol-7")}
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="md:col-span-1 bg-white rounded-3xl border border-slate-150 p-6 flex flex-col justify-between transition-all duration-300 shadow-xs hover:border-blue-300 hover:shadow-xl cursor-pointer group"
+          >
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-3xs">
+                <MessageSquare className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-display font-black text-slate-900 text-sm tracking-tight">
+                  Liaison Directe & Messagerie Pharmacie
+                </h4>
+                <p className="mt-2 font-sans text-xs text-slate-500 leading-relaxed font-semibold">
+                  Discutez en direct avec le pharmacien titulaire de votre quartier de confiance. Idéal pour obtenir un avis, poser un doute discret, ou valider une préparation sous ordonnance.
+                </p>
+              </div>
+
+              {/* Direct Pharmacist Chat preview */}
+              <div className="p-3.5 bg-slate-50/70 border border-slate-150 rounded-2xl flex items-center gap-3">
+                <div className="relative">
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold font-mono">
+                    PH
+                  </div>
+                  <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></span>
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold text-slate-800 leading-none">Ph. de l'Ambouli</span>
+                  <span className="block text-[8px] text-slate-400 mt-1">"Votre formule magistrale est prête !"</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-150/40 flex items-center justify-between text-xs font-bold text-blue-600 transition-colors">
+              <span className="group-hover:underline underline-offset-4">Discuter avec un pharmacien</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1.5" />
+            </div>
+          </motion.div>
+
+        </div>
 
       </section>
 

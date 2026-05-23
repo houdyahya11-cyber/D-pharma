@@ -197,23 +197,7 @@ export default function FooterCTA({ onOpenWaitlist, onNavigateToDemo }: FooterCT
                   onClick={() => handleSmoothScroll("problem")}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Le Problème
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSmoothScroll("solution")}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Solution Clé
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => handleSmoothScroll("ai-capabilities")}
-                  className="hover:text-white transition-colors cursor-pointer text-left"
-                >
-                  Intelligence Artificielle
+                  Le Problème & Solution
                 </button>
               </li>
               <li>
